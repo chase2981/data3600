@@ -21,6 +21,7 @@ def start_rds_connection():
 # Initiate RDS connection
 connection = start_rds_connection()
 
+
 with connection.cursor() as cursor:
     sql = f"SELECT * FROM top10s_1"
     cursor.execute(sql)
@@ -28,3 +29,5 @@ with connection.cursor() as cursor:
     print(result)
     
 connection.commit()
+
+connection = None
